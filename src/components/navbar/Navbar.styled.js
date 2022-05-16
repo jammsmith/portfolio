@@ -12,7 +12,10 @@ export const Navbar = styled.nav`
   width: 100%;
 `;
 
-export const Brand = styled.span`
+export const Brand = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   letter-spacing: 2px;
 `;
 
