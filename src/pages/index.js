@@ -8,20 +8,14 @@ const services = [
   {
     id: 'web',
     title: 'Web Development',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    description: 'I can offer a full range of web development services. Responsive designs as standard so your website will look great on all devices.  I only use modern technologies so you can be sure your website will be lightning fast as well as being highly optimised for search engines.',
     url: '/services/web-development'
   },
   {
-    id: 'mobile',
-    title: 'Mobile Development',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    url: '/services/mobile-development'
-  },
-  {
-    id: 'extra',
-    title: 'Extra stuff!',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    url: '/services/web-development'
+    id: 'eCommerce',
+    title: 'eCommerce',
+    description: 'I can offer highly featured, bespoke e-commerce applications. These apps can be designed specifically to the needs of your business, whether that\'s to sell a single product or hundreds of products with full inventory management.',
+    url: '/services/e-commerce'
   }
 ];
 
@@ -43,18 +37,21 @@ export default () => {
           />
           <IntroText>
             <IntroTextItem>Hi!</IntroTextItem>
-            <IntroTextItem>I’m James, a web and mobile developer based in the Peak District, UK</IntroTextItem>
+            <IntroTextItem>I’m James, a freelance web developer based in the Peak District, UK</IntroTextItem>
           </IntroText>
         </Intro>
         <Services>
           {
             services.map((service, index) =>
-              <Service
-                key={index}
-                title={service.title}
-                description={service.description}
-                url={service.url}
-              />
+              <>
+                <Service
+                  key={index}
+                  title={service.title}
+                  description={service.description}
+                  url={service.url}
+                />
+                {index < services.length - 1 && <HRule />}
+              </>
             )
           }
         </Services>
@@ -84,7 +81,7 @@ const Intro = styled.section`
   `};
 `;
 
-const IntroText = styled.div`  
+const IntroText = styled.div`
   padding-top: 1rem;
   width: 600px;
 `;
@@ -107,4 +104,11 @@ const Services = styled.section`
     padding: ${theme.space[5]};
     width: 100%;
   `}
+`;
+
+const HRule = styled.hr`
+  border: ${({ theme }) => `1px solid ${theme.colors.bg.quarternary}`};
+  border-radius: 5px;
+  opacity: 0.2;
+  width: 25%;
 `;

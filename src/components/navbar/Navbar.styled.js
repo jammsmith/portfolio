@@ -27,7 +27,7 @@ export const LinksList = styled.ul`
   padding: 0;
 `;
 
-export const Link = styled.li`
+export const LinkItem = styled.li`
   :hover {
     cursor: pointer;
     text-decoration: underline;

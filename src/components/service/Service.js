@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import PropTypes from 'prop-types';
 
 import {
   MainContainer,
@@ -33,12 +34,12 @@ const Service = ({ title, description, url }) => {
           <LinksContainer>
             <LinkItem>
               <Link href={url}>
-                <a><strong>{'> More Info'}</strong></a>
+                <a><strong>{'>'} More Info</strong></a>
               </Link>
             </LinkItem>
             <LinkItem>
               <Link href='/contact'>
-                <a><strong>{'> Get In Touch'}</strong></a>
+                <a><strong>{'>'} Get In Touch</strong></a>
               </Link>
             </LinkItem>
           </LinksContainer>
@@ -62,6 +63,12 @@ const Service = ({ title, description, url }) => {
       </ImagesContainer>
     </MainContainer>
   );
+};
+
+Service.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired
 };
 
 export default Service;

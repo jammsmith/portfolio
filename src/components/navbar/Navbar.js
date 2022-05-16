@@ -1,6 +1,7 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
-import { Navbar, Brand, LinksList, Link } from './Navbar.styled';
+import { Navbar, Brand, LinksList, LinkItem } from './Navbar.styled';
 
 export default () => {
   return (
@@ -14,9 +15,15 @@ export default () => {
         James Smith
       </Brand>
       <LinksList>
-        <Link>Home</Link>
-        <Link>About</Link>
-        <Link>Contact</Link>
+        <LinkItem>
+          <Link href='/'><a>Home</a></Link>
+        </LinkItem>
+        <LinkItem>
+          <Link href='/about'><a>About</a></Link>
+        </LinkItem>
+        <LinkItem>
+          <Link href='/contact'><a>Contact</a></Link>
+        </LinkItem>
       </LinksList>
     </Navbar>
   );
