@@ -2,22 +2,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styled, { css } from 'styled-components';
 
-import Service from '../components/service/Service.js';
-
-const services = [
-  {
-    id: 'web',
-    title: 'Web Development',
-    description: 'I can offer a full range of web development services. Responsive designs as standard so your website will look great on all devices.  I only use modern technologies so you can be sure your website will be lightning fast as well as being highly optimised for search engines.',
-    url: '/services/web-development'
-  },
-  {
-    id: 'eCommerce',
-    title: 'eCommerce',
-    description: 'I can offer highly featured, bespoke e-commerce applications. These apps can be designed specifically to the needs of your business, whether that\'s to sell a single product or hundreds of products with full inventory management.',
-    url: '/services/e-commerce'
-  }
-];
+import servicesJSON from '../../public/data/services';
+import Service from '../components/service/Service';
 
 export default () => {
   return (
@@ -37,20 +23,21 @@ export default () => {
           />
           <IntroText>
             <IntroTextItem>Hi!</IntroTextItem>
-            <IntroTextItem>I’m James, a freelance web developer based in the Peak District, UK</IntroTextItem>
+            <IntroTextItem>I’m James, a web and mobile developer based in the Peak District, UK</IntroTextItem>
           </IntroText>
         </Intro>
         <Services>
           {
-            services.map((service, index) =>
+            servicesJSON.map((service, index) =>
               <>
                 <Service
                   key={index}
+                  id={service.id}
                   title={service.title}
                   description={service.description}
                   url={service.url}
                 />
-                {index < services.length - 1 && <HRule />}
+                {index < (servicesJSON.length - 1) && <HRule />}
               </>
             )
           }

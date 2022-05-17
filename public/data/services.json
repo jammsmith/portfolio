@@ -1,0 +1,14 @@
+[
+  {
+    "id": "web",
+    "title": "Web Development",
+    "description": "I can offer a full range of web development services. Whether you want an eCommerce app with all the bells and whistles or just need something simple to promote your business - I can cater for all.",
+    "url": "/services/web-development"
+  },
+  {
+    "id": "mobile",
+    "title": "Mobile Development",
+    "description": "I can offer beautiful mobile apps built from the ground up which work perfectly on both IOS and Android devices.",
+    "url": "/services/mobile"
+  }
+]

@@ -6,29 +6,28 @@ import {
   MainContainer,
   TextContainer,
   TitleContainer,
+  Logo,
   DescriptionContainer,
   Description,
   LinksContainer,
   LinkItem,
-  ImagesContainer,
-  BigImage,
-  SmallImage
+  MobileImagesContainer
 } from './Service.styled.js';
 
-const Service = ({ title, description, url }) => {
+const Service = ({ id, title, description, url }) => {
   return (
     <MainContainer>
       <TextContainer>
         <TitleContainer>
-          <Image
-            src='/logo/logo-transparent-bg.png'
-            height='40px'
-            width='40px'
-          />
+          <Logo>
+            <Image
+              src='/logo/logo-transparent-bg.png'
+              height='40px'
+              width='40px'
+            />
+          </Logo>
           <h2>{title}</h2>
         </TitleContainer>
-        {/* Empty div maintains layout (TitleContainer is position absolute) */}
-        <div />
         <DescriptionContainer>
           <Description>{description}</Description>
           <LinksContainer>
@@ -45,27 +44,40 @@ const Service = ({ title, description, url }) => {
           </LinksContainer>
         </DescriptionContainer>
       </TextContainer>
-      <ImagesContainer>
-        <BigImage>
+      {
+        id === 'web' &&
           <Image
-            src='/screens/dd-laptop.png'
-            height='400px'
-            width='600px'
+            src='/screens/web-dev-both-screens.png'
+            height='600px'
+            width='900px'
           />
-        </BigImage>
-        <SmallImage>
-          <Image
-            src='/screens/dd-tablet.png'
-            height='300px'
-            width='400px'
-          />
-        </SmallImage>
-      </ImagesContainer>
+      }
+      {
+        id === 'mobile' &&
+          <MobileImagesContainer>
+            <Image
+              src='/screens/mobile-1.png'
+              height='600px'
+              width='300px'
+            />
+            <Image
+              src='/screens/mobile-2.png'
+              height='600px'
+              width='300px'
+            />
+            <Image
+              src='/screens/mobile-3.png'
+              height='600px'
+              width='300px'
+            />
+          </MobileImagesContainer>
+      }
     </MainContainer>
   );
 };
 
 Service.propTypes = {
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired

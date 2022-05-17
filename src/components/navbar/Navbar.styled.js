@@ -1,15 +1,17 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Navbar = styled.nav`
-  color: ${({ theme }) => theme.colors.text.secondary};
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: ${({ theme }) => theme.fontSizes.h5};
-  font-weight: ${({ theme }) => theme.fontWeights.bold};
-  height: ${({ theme }) => theme.sizes[3]};
-  padding: ${({ theme }) => `0 ${theme.space[5]}`};
-  width: 100%;
+  ${({ theme }) => css`
+    color: ${theme.colors.text.secondary};
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: ${theme.fontSizes.h5};
+    font-weight: ${theme.fontWeights.bold};
+    height: ${theme.sizes[3]};
+    padding: ${`0 ${theme.space[5]}`};
+    width: 100%;
+  `}
 `;
 
 export const Brand = styled.div`

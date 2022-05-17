@@ -6,23 +6,25 @@ export const MainContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: ${theme.space[3]};
+    gap: ${theme.space[4]};
     margin: auto;
-    width: 800px;
+    width: 50rem;
   `}
 `;
 
 export const TextContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  position: relative;
 `;
 
 export const TitleContainer = styled.div`
   display: flex;
-  gap: 0.5rem;
   height: 40px;
   align-items: center;
+  position: relative;
+`;
+
+export const Logo = styled.span`
   position: absolute;
   left: -48px;
 `;
@@ -30,7 +32,7 @@ export const TitleContainer = styled.div`
 export const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: ${({ theme }) => theme.space[2]};
   flex: 0.6;
 `;
 
@@ -41,28 +43,14 @@ export const Description = styled.p`
 export const LinksContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: ${({ theme }) => theme.space[1]};
 `;
 
 export const LinkItem = styled.div`
   display: flex;
-  gap: 0.25rem;
+  gap: ${({ theme }) => theme.space[0]};
 `;
 
-export const ImagesContainer = styled.div`
-  width: 800px;
-  height: 450px;
-  position: relative;
-`;
-
-export const BigImage = styled.div`
-  position: absolute;
-  z-index: 1;
-`;
-
-export const SmallImage = styled.div`
-  position: absolute;
-  bottom: 4rem;
-  right: -4rem;
-  z-index: 2;
+export const MobileImagesContainer = styled.div`
+  display: flex;
 `;
